@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Drowsiness Alert System</title>
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/Home.css')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:lightslategray;">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><b>Driver Drowsiness System</b></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/"><b>Home</b></a></li>
+                <li><a href="/alert_system"><b>Webcam</b></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="logo">
+        <img src="">
+
+    </div>
+
+    <div class="copy-container">
+        <div class="wrapper">
+            <div id="date"></div>
+            <div id="time"></div>
+        </div>
+    </div>
+
+    <div class="card">
+
+        <div class="image">
+            <img src="static/img/drowsiness2.jpg">
+        </div>
+        <div class="title">
+            <h1 style="font-size:25px;">
+                <b>What is Drowsiness Detector</b>
+            </h1>
+        </div>
+        <div class="des">
+            <p>Driver drowsiness detection is a car safety technology which helps prevent accidents caused by the driver getting drowsy. Various studies have suggested that around 20% of all road accidents are fatigue-related, up to 50% on certain roads</p>
+            <a href="https://en.wikipedia.org/wiki/Driver_drowsiness_detection"><button>Read More...</button></a>
+        </div>
+    </div>
+
+
+    <div class="card">
+
+        <div class="image">
+            <img src="static/img/img1.jpg">
+        </div>
+        <div class="title">
+            <h1 style="font-size:35px;">
+                <b>Open Your Webcam</b>
+            </h1>
+        </div>
+        <div class="des">
+            <p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </p>
+            <a href="/alert_system"><button>Go To Webcam </button></a>
+        </div>
+    </div>
+
+    <div class="card">
+
+        <div class="image">
+            <img src="static/img/img6.jpg">
+        </div>
+        <div class="title">
+            <h1 style="font-size:28px;">
+                <b>Prevention</b>
+            </h1>
+        </div>
+        <div class="des">
+            <p style="text-align: justify; margin-left: 5px; margin-right: 5px;">
+                1) Get a full night of seven to eight hours of sleep before driving.
+                <br> 2) Avoid driving late at night.
+                <br> 3)Avoid driving alone.
+                <br> 4)On a long trip, share the driving with another passenger.
+                <br> 5)Pull over at a rest stop and take a nap.<br>
+                <br>
+            </p>
+            <a href="http://sleepeducation.org/sleep-topics/drowsy-driving"><button>Read More...</button></a>
+        </div>
+    </div>
+
+    <style>
+        .wrapper {
+            position: absolute;
+            top: 10%;
+            left: 25%;
+            right: 25%;
+            width: 40%;
+            margin: 0 auto;
+            background: rgba(17, 14, 14, 0.5);
+            border: 2px solid white;
+            border-radius: 20px/50px;
+            background-clip: padding-box;
+            text-align: center;
+        }
+        
+        #date {
+            color: white;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        #time {
+            color: white;
+            text-align: center;
+            font-size: 3em;
+        }
+    </style>
+
+
+
+
+    <!-- <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/datetime.js')}}"></script> -->
+    <script>
+        /* for time */
+        (function() {
+            'use strict';
+
+            function getDate() {
+                var date = new Date();
+                var weekday = date.getDay();
+                var month = date.getMonth();
+                var day = date.getDate();
+                var year = date.getFullYear();
+                var hour = date.getHours();
+                var minutes = date.getMinutes();
+                var seconds = date.getSeconds();
+
+                if (hour < 10) hour = "0" + hour;
+                if (minutes < 10) minutes = "0" + minutes;
+                if (seconds < 10) seconds = "0" + seconds;
+
+                var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+                var monthColors = ["#1E90FF", "#FF69B4", "#00FFFF", "#7CFC00", "#00CED1", "#FF1493", "#00008B", "#FF7F50", "#C71585", "#FF4500", "#FFD700", "#800000"]
+
+                var ampm = " PM ";
+
+                if (hour < 12) ampm = " AM ";
+
+                if (hour > 12) hour -= 12;
+
+                var showDate = weekdayNames[weekday] + ", " + monthNames[month] + " " + day + ", " + year;
+
+                var showTime = hour + ":" + minutes + ":" + seconds + ampm;
+
+                var color = monthColors[month];
+
+                document.getElementById('date').innerHTML = showDate;
+
+                document.getElementById('time').innerHTML = showTime;
+
+                document.bgColor = color;
+
+                requestAnimationFrame(getDate);
+            }
+
+            getDate();
+
+        }());
+    </script>
+
+</body>
+
+</html>

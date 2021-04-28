@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Webcam</title>
+    <link rel="stylesheet" href="Home.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:lightslategray;">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><b>Driver Drowsiness System</b></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/"><b>Home</b></a></li>
+                <li class="active"><a href="#"><b>Webcam</b></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main" style="text-align: center;  ">
+        <img src="{{ url_for('video_feed') }}" style="border: 5px groove rgb(97, 57, 240);">
+        <!-- url_for provides the url for a specific url point corresponding to a function- here video_feed -->
+    </div>
+
+
+</body>
